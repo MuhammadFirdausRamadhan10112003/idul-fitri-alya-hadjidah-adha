@@ -237,13 +237,6 @@
             transform: scale(1.05);
         }
 
-        .greeting {
-            display: none;
-            margin-top: 40px;
-            opacity: 0;
-            animation: fadeInUp 0.8s ease-out forwards;
-        }
-
         @keyframes fadeInUp {
             from {
                 opacity: 0;
@@ -254,6 +247,7 @@
                 transform: translateY(0);
             }
         }
+
         .page {
             display: none;
             animation: pageTransition 0.8s ease-out;
@@ -376,34 +370,6 @@
             margin-top: 30px;
         }
 
-        .btn-back {
-            padding: 12px 30px;
-            font-size: 0.95em;
-            border: 2px solid #FFE68C;
-            border-radius: 5px;
-            background: rgba(255, 230, 140, 0.1);
-            color: #FFE68C;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: bold;
-            backdrop-filter: blur(5px);
-        }
-
-        .btn-back:hover {
-            background: rgba(255, 230, 140, 0.2);
-            box-shadow: 0 0 15px rgba(255, 230, 140, 0.3);
-            transform: scale(1.05);
-        }
-
-        .greeting-signature {
-            font-size: 0.9em;
-            color: #FFE68C;
-            margin-top: 8px;
-            margin-bottom: 8px;
-            font-style: italic;
-            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-        }
-
         .footer {
             color: #FFE68C;
             font-size: 0.85em;
@@ -465,22 +431,6 @@
             button {
                 padding: 12px 25px;
                 font-size: 0.9em;
-            }
-
-            .greeting-message {
-                font-size: 0.85em;
-                padding: 20px;
-                line-height: 1.6;
-            }
-
-            .greeting-name {
-                font-size: 1.3em;
-                margin-bottom: 15px;
-            }
-
-            .footer {
-                font-size: 0.85em;
-                margin-top: 20px;
             }
 
             .greeting-page-content {
@@ -641,17 +591,6 @@
             audio.play().catch(err => {
                 console.log('Audio autoplay diperlukan untuk dimulai oleh user interaction');
             });
-        }
-
-        // Kembali ke halaman nama
-        function goBackToName() {
-            document.getElementById('greetingPage').classList.remove('active');
-            document.getElementById('namePage').classList.add('active');
-            
-            // Stop musik
-            const audio = document.getElementById('bgMusic');
-            audio.pause();
-            audio.currentTime = 0;
         }
 
         // Izinkan Enter untuk mengirim
