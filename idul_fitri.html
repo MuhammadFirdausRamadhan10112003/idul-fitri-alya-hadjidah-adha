@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idul Fitri 2026 - Ucapan Hangat</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #F5F1E8 0%, #FFF8F0 50%, #F5F1E8 100%);
+            min-height: 100vh;
+        }
+
+        .background-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 1;
+            z-index: -1;
+            background-image: url('mosque-bg.jpg');
+        }
+
+        .stars {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #D4AF37;
+            border-radius: 50%;
+            opacity: 0.6;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 1; }
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .content {
+            text-align: center;
+            animation: slideDown 1s ease-out;
+            max-width: 700px;
+            background: rgba(107, 91, 149, 0.85);
+            backdrop-filter: blur(15px);
+            padding: 50px 40px;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header-icons {
+            font-size: 1.8em;
+            margin-top: 15px;
+            margin-bottom: 25px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .greeting-header {
+            font-size: 1.2em;
+            color: #FFE68C;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 0.2s forwards;
+            font-weight: 300;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h1 {
+            font-size: 4em;
+            color: #FFE68C;
+            margin-bottom: 15px;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+            letter-spacing: 5px;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 0.4s forwards;
+            font-weight: bold;
+            position: relative;
+            display: inline-block;
+        }
+
+        h1::before {
+            content: '✨';
+            position: absolute;
+            left: -25px;
+            top: -10px;
+            font-size: 0.9em;
+            animation: starFloat 3s ease-in-out infinite;
+            color: rgba(100, 150, 255, 0.6);
+            text-shadow: 0 0 10px rgba(100, 150, 255, 0.3);
+        }
+
+        h1::after {
+            content: '✨';
+            position: absolute;
+            right: -25px;
+            top: 5px;
+            font-size: 0.8em;
+            animation: starFloat 3.5s ease-in-out infinite 0.5s;
+            color: rgba(100, 150, 255, 0.6);
+            text-shadow: 0 0 10px rgba(100, 150, 255, 0.3);
+        }
+
+        @keyframes starFloat {
+            0%, 100% {
+                opacity: 0.2;
+                transform: translateY(0px) scale(0.8);
+            }
+            50% {
+                opacity: 0.5;
+                transform: translateY(-12px) scale(1);
+            }
+        }
+
+        .date-hijri {
+            font-size: 1.1em;
+            color: #fff;
+            margin-bottom: 30px;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 0.6s forwards;
+            letter-spacing: 2px;
+        }
+
+        .message-intro {
+            font-size: 1em;
+            color: #fff;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 0.8s forwards;
+        }
+
+        .input-section {
+            margin: 30px 0;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 1s forwards;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        input[type="text"] {
+            padding: 15px 20px;
+            font-size: 1em;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            width: 100%;
+            max-width: 400px;
+            transition: all 0.3s ease;
+            text-align: center;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        input[type="text"]::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        input[type="text"]:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+            border-color: #fff;
+        }
+
+        button {
+            padding: 15px 40px;
+            font-size: 1em;
+            border: 2px solid #fff;
+            border-radius: 5px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            letter-spacing: 1px;
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+            transform: scale(1.05);
+        }
+
+        .greeting {
+            display: none;
+            margin-top: 40px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .page {
+            display: none;
+            animation: pageTransition 0.8s ease-out;
+        }
+
+        .page.active {
+            display: flex;
+        }
+
+        #namePage {
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        #greetingPage {
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        .greeting-page-content {
+            text-align: center;
+            max-width: 800px;
+            background: rgba(107, 91, 149, 0.85);
+            backdrop-filter: blur(15px);
+            padding: 35px 40px;
+            border-radius: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+            animation: slideDown 1s ease-out;
+        }
+
+        .greeting-header-page {
+            font-size: 1.1em;
+            color: #FFE68C;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            font-weight: 300;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .greeting-title-page {
+            font-size: 3em;
+            color: #FFE68C;
+            margin: 10px 0;
+            font-weight: bold;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+            letter-spacing: 2px;
+        }
+
+        .greeting-hijri-page {
+            font-size: 1em;
+            color: #fff;
+            margin-bottom: 12px;
+            letter-spacing: 1px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .greeting-decorative {
+            font-size: 1.2em;
+            margin: 10px 0;
+            opacity: 0.8;
+        }
+
+        .greeting-intro-page {
+            font-size: 0.9em;
+            color: #fff;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, #FFE68C, transparent);
+            margin: 12px 0;
+            opacity: 0.6;
+        }
+
+        .greeting-name-display {
+            font-size: 2em;
+            color: #FFE68C;
+            margin: 12px 0;
+            font-weight: bold;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+        }
+
+        .greeting-message-page {
+            font-size: 0.85em;
+            color: #fff;
+            line-height: 1.6;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+            border-left: 4px solid #FFE68C;
+            margin-bottom: 12px;
+            max-height: 180px;
+            overflow-y: auto;
+            text-align: justify;
+        }
+
+        .greeting-signature {
+            font-size: 0.95em;
+            color: #FFE68C;
+            margin-top: 12px;
+            margin-bottom: 15px;
+            font-style: italic;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .footer-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .btn-back {
+            padding: 12px 30px;
+            font-size: 0.95em;
+            border: 2px solid #FFE68C;
+            border-radius: 5px;
+            background: rgba(255, 230, 140, 0.1);
+            color: #FFE68C;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: bold;
+            backdrop-filter: blur(5px);
+        }
+
+        .btn-back:hover {
+            background: rgba(255, 230, 140, 0.2);
+            box-shadow: 0 0 15px rgba(255, 230, 140, 0.3);
+            transform: scale(1.05);
+        }
+
+        .greeting-signature {
+            font-size: 0.9em;
+            color: #FFE68C;
+            margin-top: 8px;
+            margin-bottom: 8px;
+            font-style: italic;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .footer {
+            color: #FFE68C;
+            font-size: 0.85em;
+            letter-spacing: 1px;
+            margin-top: 8px;
+            opacity: 1;
+            animation: none;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 2.2em;
+                margin-bottom: 10px;
+            }
+
+            .greeting-header {
+                font-size: 1em;
+            }
+
+            .date-hijri {
+                font-size: 1em;
+                margin-bottom: 15px;
+            }
+
+            .header-icons {
+                font-size: 1.5em;
+                margin-top: 10px;
+                margin-bottom: 15px;
+            }
+
+            .message-intro {
+                font-size: 0.9em;
+                line-height: 1.5;
+                margin-bottom: 20px;
+            }
+
+            .content {
+                padding: 25px 20px;
+                border-radius: 15px;
+            }
+
+            .input-section {
+                padding: 20px 15px;
+                margin: 20px 0;
+                gap: 10px;
+            }
+
+            input[type="text"] {
+                font-size: 0.95em;
+                padding: 12px 15px;
+                max-width: 100%;
+            }
+
+            button {
+                padding: 12px 25px;
+                font-size: 0.9em;
+            }
+
+            .greeting-message {
+                font-size: 0.85em;
+                padding: 20px;
+                line-height: 1.6;
+            }
+
+            .greeting-name {
+                font-size: 1.3em;
+                margin-bottom: 15px;
+            }
+
+            .footer {
+                font-size: 0.85em;
+                margin-top: 20px;
+            }
+
+            .greeting-page-content {
+                padding: 25px 20px;
+                border-radius: 15px;
+                max-width: 90%;
+            }
+
+            .greeting-title-page {
+                font-size: 1.8em;
+                letter-spacing: 1px;
+            }
+
+            .greeting-header-page {
+                font-size: 0.85em;
+            }
+
+            .greeting-hijri-page {
+                font-size: 0.9em;
+                margin-bottom: 8px;
+            }
+
+            .greeting-name-display {
+                font-size: 1.5em;
+                margin: 8px 0;
+            }
+
+            .greeting-message-page {
+                font-size: 0.8em;
+                padding: 15px;
+                line-height: 1.5;
+                max-height: 160px;
+                margin-bottom: 8px;
+            }
+
+            .greeting-signature {
+                font-size: 0.85em;
+            }
+
+            .greeting-decorative {
+                font-size: 1em;
+            }
+
+            .footer {
+                font-size: 0.75em;
+                margin-top: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-image"></div>
+    <div class="stars" id="stars"></div>
+
+    <audio id="bgMusic" preload="auto" loop>
+        <source src="kymeng.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Halaman Input Nama -->
+    <div class="container page active" id="namePage">
+        <div class="content">
+            <div class="greeting-header">
+                SELAMAT HARI RAYA
+            </div>
+
+            <h1>IDUL FITRI</h1>
+
+            <div class="date-hijri">
+                1 Syawal 1447 H
+            </div>
+
+            <div class="header-icons">
+                🏮
+            </div>
+
+            <div class="message-intro">
+                🏮 Dengan Tulus Hati Kami mengucapkan Selamat Hari Raya Idul Fitri. Mohon Maaf Lahir dan Batin. Semoga kebahagiaan dan berkah selalu menyertai kita semua. 🏮
+            </div>
+
+            <div class="input-section">
+                <input type="text" id="nameInput" placeholder="Masukkan nama" />
+                <button onclick="goToGreeting()">Lanjut ke Ucapan</button>
+            </div>
+
+            <div class="footer">
+                🌙 Minal Aidin wal Faizin - Selamat Hari Raya Idul Fitri 2026 🌙
+            </div>
+        </div>
+    </div>
+
+    <!-- Halaman Ucapan -->
+    <div class="container page" id="greetingPage">
+        <div class="greeting-page-content">
+            <div class="greeting-header-page">☪ 🏮 SELAMAT HARI RAYA 🏮 ☪</div>
+            
+            <div class="greeting-title-page">IDUL FITRI</div>
+            
+            <div class="greeting-hijri-page">1 Syawal 1447 H</div>
+
+            <div class="greeting-decorative">——— 🌙 ———</div>
+
+            <div class="greeting-intro-page">
+                🏮 Dengan Tulus Hati Kami mengucapkan Selamat Hari Raya Idul Fitri. Mohon Maaf Lahir dan Batin. Semoga kebahagiaan dan berkah selalu menyertai kita semua. 🏮
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="greeting-name-display" id="greetingNameDisplay"></div>
+
+            <div class="greeting-message-page" id="greetingMessagePage">
+                Di hari yang fitri ini, saya (Alya Hadjidah Adha) ingin mereset hati dan menghapus segala dendam agar kita bisa kembali ke fitrah yang murni. Seiring mekarnya kedamaian di taman jiwa, saya mengucapkan Taqabbalallahu minna wa minkum, semoga Allah menerima segala amal ibadah kita dan melimpahkan keberkahan yang tak terputus. Dari lubuk hati yang paling dalam, saya memohon maaf lahir dan batin atas segala khilaf, baik dalam kata maupun perbuatan yang mungkin pernah melukaimu. Selamat Hari Raya Idul Fitri, semoga kemenangan ini membawa kebahagiaan dan semangat baru yang lebih bermakna untuk kita semua.
+            </div>
+
+            <div class="greeting-signature">
+                Dengan Doa dan Harapan Terbaik,<br>
+                Alya Hadjidah Adha
+            </div>
+
+            <div class="footer">
+                🌙 Minal Aidin wal Faizin - Selamat Hari Raya Idul Fitri 2026 🌙
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Membuat bintang-bintang yang berkelap-kelip
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            for (let i = 0; i < 50; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // Pindah ke halaman ucapan
+        function goToGreeting() {
+            const nameInput = document.getElementById('nameInput');
+            const name = nameInput.value.trim();
+
+            if (name === '') {
+                alert('Silakan masukkan nama Anda terlebih dahulu');
+                return;
+            }
+
+            // Update nama di halaman ucapan
+            document.getElementById('greetingNameDisplay').textContent = name;
+
+            // Sembunyikan halaman nama dan tampilkan halaman ucapan
+            document.getElementById('namePage').classList.remove('active');
+            document.getElementById('greetingPage').classList.add('active');
+
+            // Putar musik latar
+            const audio = document.getElementById('bgMusic');
+            audio.play().catch(err => {
+                console.log('Audio autoplay diperlukan untuk dimulai oleh user interaction');
+            });
+        }
+
+        // Kembali ke halaman nama
+        function goBackToName() {
+            document.getElementById('greetingPage').classList.remove('active');
+            document.getElementById('namePage').classList.add('active');
+            
+            // Stop musik
+            const audio = document.getElementById('bgMusic');
+            audio.pause();
+            audio.currentTime = 0;
+        }
+
+        // Izinkan Enter untuk mengirim
+        document.getElementById('nameInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                goToGreeting();
+            }
+        });
+
+        // Inisialisasi bintang saat halaman dimuat
+        window.addEventListener('load', createStars);
+    </script>
+</body>
+</html>
